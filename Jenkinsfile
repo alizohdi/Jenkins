@@ -1,4 +1,4 @@
-CODE_CHANGES == GetGitChanges{}
+CODE_CHANGES == getGitChanges{}
 pipeline {
   agent any
   stages {
