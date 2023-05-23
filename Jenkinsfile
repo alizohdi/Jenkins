@@ -1,4 +1,4 @@
-def gv = load "script.groovy"
+def gv
 
 pipeline {
   agent any
@@ -11,7 +11,8 @@ pipeline {
     stage("build"){
       when {
         expression {
-          echo CODE_CHANGES
+          gv = load "script.groovy"
+          CODE_CHANGES = gv.getGitChanges()
           BRANCH_NAME == 'dev' && CODE_CHANGES == true
         }
       }
