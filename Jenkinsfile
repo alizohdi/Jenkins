@@ -16,13 +16,13 @@ pipeline {
       stage("build"){
       when {
         expression {
-          echo "building version ${NEW_VERSION}"
+          echo "building version ${VERSION}"
           BRANCH_NAME == 'dev' && CODE_CHANGES == true
         }
       }
       steps {
         echo 'building the application...'
-        echo "building version ${NEW_VERSION}"
+        echo "building version ${VERSION}"
       }
     }
     stage("test"){
