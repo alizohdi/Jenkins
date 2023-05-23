@@ -13,7 +13,7 @@ pipeline {
       steps{
         script {
            gv = load "pipeline.groovy"
-           CODE_CHANGES = gv.getGitChanges()
+           echo gv.getGitChanges()
         }
       }
     }
