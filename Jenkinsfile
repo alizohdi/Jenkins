@@ -8,11 +8,18 @@ pipeline {
     // SERVER_CREDENTIALS = credentials('')
   }
   stages {
+    stage("init"){
+      steps{
+        script {
+           gv = load "script.groovy"
+           CODE_CHANGES = gv.getGitChanges()
+        }
+      }
+    }
     stage("build"){
       when {
         expression {
-          gv = load "script.groovy"
-          CODE_CHANGES = gv.getGitChanges()
+          echo "building version ${CODE_CHANGES}"
           BRANCH_NAME == 'dev' && CODE_CHANGES == true
         }
       }
