@@ -13,13 +13,7 @@ pipeline {
     // SERVER_CREDENTIALS = credentials('')
   }
   stages {
-    stage("init"){
-      steps{
-        //script {
-        //}
-      }
-    }
-    stage("build"){
+      stage("build"){
       when {
         expression {
           echo "building version ${NEW_VERSION}"
