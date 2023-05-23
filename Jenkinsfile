@@ -15,16 +15,14 @@ pipeline {
   stages {
     stage("init"){
       steps{
-        script {
-           //gv = load "pipeline.groovy"
-          echo ${NEW_VERSION}
-        }
+        //script {
+        //}
       }
     }
     stage("build"){
       when {
         expression {
-          echo "building version ${CODE_CHANGES}"
+          echo "building version ${NEW_VERSION}"
           BRANCH_NAME == 'dev' && CODE_CHANGES == true
         }
       }
