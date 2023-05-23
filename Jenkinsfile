@@ -1,9 +1,13 @@
 #!/usr/bin/groovy
-def gv
-def pipeline
 
 pipeline {
+  parameters {
+      booleanParam(name: 'cleanupGCR', defaultValue: false, description: 'Cleanup GCR Images.')
+      booleanParam(name: 'cleanupPods', defaultValue: false, description: 'Cleanup Pods.')
+  }
   agent any
+  tools {
+  }
   environment {
     NEW_VERSION = '1.3.0'
     // SERVER_CREDENTIALS = credentials('')
@@ -12,8 +16,8 @@ pipeline {
     stage("init"){
       steps{
         script {
-           gv = load "pipeline.groovy"
-           echo gv.getGitChanges()
+           //gv = load "pipeline.groovy"
+           //echo gv.getGitChanges()
         }
       }
     }
