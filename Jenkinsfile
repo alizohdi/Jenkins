@@ -17,7 +17,7 @@ pipeline {
       steps{
         script {
            //gv = load "pipeline.groovy"
-           //echo gv.getGitChanges()
+          echo ${NEW_VERSION}
         }
       }
     }
