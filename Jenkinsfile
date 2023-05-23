@@ -2,8 +2,8 @@
 
 pipeline {
   parameters {
-      booleanParam(name: 'cleanupGCR', defaultValue: false, description: 'Cleanup GCR Images.')
-      booleanParam(name: 'cleanupPods', defaultValue: false, description: 'Cleanup Pods.')
+      booleanParam(name: 'dev', defaultValue: false, description: '...')
+      booleanParam(name: 'qa', defaultValue: false, description: '...')
   }
   agent any
   //tools {
