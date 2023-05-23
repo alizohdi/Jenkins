@@ -36,6 +36,11 @@ pipeline {
       }
     }
     stage("deploy"){
+      when {
+        expression {
+          params.VERSION == '1.2.0'
+        }
+      }
       steps {
         echo 'deploying the application...'
       }
