@@ -1,5 +1,6 @@
 #!/usr/bin/groovy
 def gv
+def pipeline
 
 pipeline {
   agent any
@@ -11,7 +12,7 @@ pipeline {
     stage("init"){
       steps{
         script {
-           gv = load "script.groovy"
+           gv = load "pipeline.groovy"
            CODE_CHANGES = gv.getGitChanges()
         }
       }
