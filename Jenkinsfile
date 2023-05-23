@@ -6,8 +6,8 @@ pipeline {
       booleanParam(name: 'cleanupPods', defaultValue: false, description: 'Cleanup Pods.')
   }
   agent any
-  tools {
-  }
+  //tools {
+  //}
   environment {
     NEW_VERSION = '1.3.0'
     // SERVER_CREDENTIALS = credentials('')
