@@ -43,24 +43,16 @@ pipeline {
   }
   post {
     always {
-        steps {
-          echo 'send an email...'
-        }
+        echo 'send an email always...'
     }
     success {
-        steps {
-          echo 'send an email...'
-        }
+        echo 'send an email on success...'
     }
     failure {
-        steps {
-          echo 'send an email...'
-        }
+        echo 'send an email on failure...'
     }
     aborted {
-        steps {
-          echo 'send an email...'
-        }
+        echo 'send an email on aborted...'
     }
   }
 }
