@@ -1,3 +1,4 @@
+#!/usr/bin/groovy
 def gv
 
 pipeline {
