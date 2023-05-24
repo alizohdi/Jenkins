@@ -27,7 +27,9 @@ pipeline {
         }
       }
       steps {
-        echo "building the application version ${VERSION}"
+        script {
+          gv.buildApp()
+        }
       }
     }
     stage("test"){
