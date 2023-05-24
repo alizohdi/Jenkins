@@ -1,4 +1,5 @@
 #!/usr/bin/groovy
+def gv 
 
 pipeline {
   parameters {
@@ -12,7 +13,14 @@ pipeline {
     // SERVER_CREDENTIALS = credentials('')
   }
   stages {
-      stage("build"){
+    stage("init") {
+      steps {
+        script {
+          gv = load "script.groovy"
+        }
+      }
+    }
+    stage("build"){
       when {
         expression {
           VERSION == '1.3.0'
