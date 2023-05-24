@@ -48,16 +48,17 @@ pipeline {
   post {
     always {
         echo 'send an email always...'
-        emailext body: 'Emailsent from Jenkins', subject: 'Test Email', to: 'ali.tehrani@equifax.com'
     }
     success {
         echo 'send an email on success...'
     }
     failure {
         echo 'send an email on failure...'
+        emailext body: 'Email sent from Jenkins for Job's failure', subject: 'Test Email', to: 'ali.tehrani@equifax.com'
     }
     aborted {
         echo 'send an email on aborted...'
+        emailext body: 'Email sent from Jenkins for Job's aborted', subject: 'Test Email', to: 'ali.tehrani@equifax.com'
     }
   }
 }
