@@ -48,6 +48,7 @@ pipeline {
   post {
     always {
         echo 'send an email always...'
+        emailext body: 'Emailsent from Jenkins', subject: 'Test Email', to: 'ali.tehrani@equifax.com'
     }
     success {
         echo 'send an email on success...'
