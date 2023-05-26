@@ -62,7 +62,7 @@ pipeline {
          emailext (
             subject: 'Aborted job: ${currentBuild.fullDisplayName}',
             body: 'The job ${currentBuild.fullDisplayName} has been aborted.',
-            recipientProviders: ali.tehrani@equifax.com,
+            recipientProviders: [ali.tehrani@equifax.com],
             replyTo: '$DEFAULT_REPLYTO',
             attachLog: true
          )
