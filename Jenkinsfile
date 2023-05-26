@@ -59,6 +59,7 @@ pipeline {
     }
     success {
         echo 'send an email on success...'
+        emailext body: 'Email sent from Jenkins for success', subject: 'Test Email', to: 'ali.tehrani@equifax.com'
     }
     failure {
         echo 'send an email on failure...'
