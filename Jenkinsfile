@@ -65,7 +65,7 @@ pipeline {
             recipientProviders: [developers()],
             replyTo: '$DEFAULT_REPLYTO',
             attachLog: true
-         }
+         )
     }
     failure {
         echo 'send an email on failure...'
