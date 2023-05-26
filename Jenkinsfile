@@ -59,7 +59,13 @@ pipeline {
     }
     success {
         echo 'send an email on success...'
-        emailext body: 'Email sent from Jenkins for success', subject: 'Test Email', to: 'ali.tehrani@equifax.com'
+         emailext (
+            subject: 'Aborted job: ${currentBuild.fullDisplayName}',
+            body: 'The job ${currentBuild.fullDisplayName} has been aborted.',
+            recipientProviders: [developers()],
+            replyTo: '$DEFAULT_REPLYTO',
+            attachLog: true
+         }
     }
     failure {
         echo 'send an email on failure...'
