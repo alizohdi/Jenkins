@@ -60,7 +60,7 @@ pipeline {
     success {
         echo 'send an email on success...'
          emailext (
-            subject: 'Aborted job: ${currentBuild.fullDisplayName}',
+            subject: "Aborted job: ${currentBuild.fullDisplayName}",
             body: 'The job ${currentBuild.fullDisplayName} has been aborted.',
             to: 'ali.tehrani@equifax.com',
             replyTo: '$DEFAULT_REPLYTO',
